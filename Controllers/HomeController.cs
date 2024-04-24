@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using NebulaCars.Models;
 
-namespace NebulaCars.Controllers;
+namespace movieappauth.Controllers;
 
 public class HomeController : Controller
 {
