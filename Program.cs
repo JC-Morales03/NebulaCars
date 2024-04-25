@@ -58,3 +58,13 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "detallesQ8",
+        pattern: "DetallesQ8", // La ruta que deseas
+        defaults: new { controller = "Home", action = "DetallesQ8" } // Controlador y acción que manejarán la solicitud
+    );
+}
+);

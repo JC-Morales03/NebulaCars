@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles del Carro</title>
+    <link rel="stylesheet" type="text/css" href="~/css/car-details.css" />
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+        }
+        
+        .car-details {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        .car-info {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .car-image-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .car-image {
+            max-width: 120%;
+            height: auto;
+        }
+
+        .car-details p {
+            color: #030303;
+            margin-bottom: 10px;
+            font-size: 22px; /* Ajuste de tamaño de letra */
+        }
+
+        .car-details p strong {
+            font-size: 22px; /* Ajuste de tamaño de letra para elementos strong */
+        }
+
+        .car-details p strong:first-child {
+            color: blue; /* Cambio de color para el precio */
+        }
+
+        .car-details ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 23px; /* Ajuste de tamaño de letra para la lista */
+        }
+
+        .car-details ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="car-details">
+            <div class="car-info">
+                <h2>Audi Q8</h2>
+                <p><strong>Precio:</strong> $75,000</p>
+                <p><strong>Colores:</strong> Negro, Plomo, Blanco</p>
+                <p><strong>Año:</strong> 2024</p>
+                <p><strong>Características:</strong></p>
+                <ul>
+                    <li> - Motor V8</li>
+                    <li> - 24 válvulas</li>
+                    <li> - Doble eje de leva (DOHC)</li>
+                    <li> - Vehículo híbrido suave</li>
+                    <li> - Transmisión automática</li>
+                    <li> - Cilindrada: 2.995 cc</li>
+                    <li> - Asientos de cuero</li>
+                    <li> - Combustible: Gasolina Premium</li>
+                    <li> - Velocidad máxima: 250km/h</li>
+                    
+                </ul>
+            </div>
+            <div class="car-image-container">
+                <img src="/images/Q82.jpg" alt="Carro" class="car-image">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

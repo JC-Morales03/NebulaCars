@@ -1,5 +1,14 @@
 ﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+/* Estilos personalizados para el encabezado */
+header {
+  background-color: #333; /* Color de fondo oscuro */
+  color: white; /* Color del texto */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center; /* Centrar el contenido horizontalmente */
+  align-items: center; /* Centrar el contenido verticalmente */
+}
 
 a.navbar-brand {
   white-space: normal;
@@ -39,10 +48,32 @@ button.accept-policy {
   line-height: inherit;
 }
 
-.footer {
-  position: absolute;
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+}
+
+/* Estilos para el texto del pie de página */
+footer p {
+  margin: 0;
+}
+
+/* Estilos para los íconos de redes sociales */
+.redes-sociales {
+  margin-bottom: 10px;
+}
+
+.redes-sociales a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.redes-sociales a img {
+  width: 30px; /* Ajusta el tamaño de los íconos según sea necesario */
+  height: auto;
 }
