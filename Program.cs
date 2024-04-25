@@ -66,5 +66,11 @@ app.UseEndpoints(endpoints =>
         pattern: "DetallesQ8", // La ruta que deseas
         defaults: new { controller = "Home", action = "DetallesQ8" } // Controlador y acción que manejarán la solicitud
     );
+
+    endpoints.MapControllerRoute(
+        name: "aboutUs",
+        pattern: "AboutUs",
+        defaults: new { controller = "AboutUs", action = "AboutUs" }
+    );
 }
 );

@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using NebulaCars.Models;
 
-namespace movieappauth.Controllers;
+namespace NebulaCars.Controllers;
 
 public class HomeController : Controller
 {
@@ -21,6 +21,11 @@ public class HomeController : Controller
     public IActionResult Privacy()
     {
         return View();
+    }
+
+    public IActionResult AboutUs()
+    {
+        return View("AboutUs");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

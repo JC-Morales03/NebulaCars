@@ -268,3 +268,300 @@ footer p {
   margin-bottom: 5px;
 }
 
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0;
+}
+
+.container {
+  position: relative;
+  text-align: center; /* Centra horizontalmente el texto */
+  vertical-align: middle; /* Centra verticalmente el texto */
+  line-height: 300px; /* Ajusta la altura de línea igual a la altura del contenedor */
+  width: 100%;
+  height: 300px;
+  background-image: url('imagenes/tallerAutos.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0; /* Eliminar margen */
+  padding: 0; /* Eliminar padding */
+}
+
+.container-2 {
+  text-align: center; /* Centra horizontalmente el texto */
+  vertical-align: middle; /* Centra verticalmente el texto */
+  line-height: 300px; /* Ajusta la altura de línea igual a la altura del contenedor */
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.content {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.77px;
+  color: white;
+  position: absolute;
+  top: 50%; /* Posiciona el contenido en el centro vertical */
+  left: 50%; /* Posiciona el contenido en el centro horizontal */
+  transform: translate(-50%, -50%); /* Centra el contenido correctamente */
+  padding: 20px;
+  background-color: #142239; /* Fondo semitransparente */
+  width: 100%;
+  text-align: center;
+  margin: 0; /* Eliminar margen */
+  margin-bottom: 0; /* Eliminar margen inferior */
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  line-height: 2;
+}
+
+.content-2 {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.77px;
+  background-color: #142239; /* Fondo semitransparente */
+  color: white;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  line-height: 2;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el logo */
+header img {
+  height: 90px; /* Reducimos la altura del logo */
+  width: auto;
+  transition: transform 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+/* Efecto al pasar el mouse sobre el logo */
+header img:hover {
+  transform: scale(1.1); /* Aumentar el tamaño del logo al pasar el mouse */
+}
+
+/* Estilos para la navegación */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s; /* Transición suave para el cambio de color */
+}
+
+nav ul li a:hover {
+  color: #e74c3c; /* Rojo al pasar el mouse */
+}
+
+/* Estilos para los botones */
+.btn {
+  background-color: #e74c3c; /* Rojo */
+  border: none;
+  color: #fff;
+  padding: 8px 16px; /* Ajustamos el padding */
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px; /* Tamaño de fuente reducido */
+  margin-left: 20px; /* Espacio entre botones */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Transición suave para el cambio de color */
+}
+
+.btn:hover {
+  background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+}
+
+
+
+/* Estilos para el formulario de registro */
+.form-register {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: transform 0.3s; /* Transición suave al cambiar la escala */
+}
+
+/* Efecto al pasar el mouse sobre el formulario */
+.form-register:hover {
+  transform: scale(1.05); /* Aumenta la escala del formulario al pasar el mouse */
+}
+
+.controls {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.botons {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.form-register h4 {
+  margin-top: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.form-register {
+  width: 400px;
+  background: #242c3c;
+  padding: 30px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: white;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.controls {
+  width: 100%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #1f53c5;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: white;
+}
+
+.form-register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.form-register a {
+  color: white;
+  text-decoration: none;
+}
+
+.form-register a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-register .botons {
+  width: 100%;
+  background: #1f53c5;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+  transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.form-register .botons:hover {
+  background: #14387d; /* Color de fondo más oscuro al pasar el mouse */
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding-top: auto;
+}
+
+/* Estilos para el texto del pie de página */
+footer p {
+  margin: 0;
+}
+
+/* Estilos para los íconos de redes sociales */
+.redes-sociales {
+  margin-bottom: 10px;
+}
+
+.redes-sociales a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.redes-sociales a img {
+  width: 30px; /* Ajusta el tamaño de los íconos según sea necesario */
+  height: auto;
+}
+
+
