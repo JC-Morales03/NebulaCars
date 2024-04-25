@@ -6,48 +6,22 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace NebulaCars.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class ContactoMigracion : Migration
+    public partial class ProformaCarritoMigracion : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "t_proforma");
-
-            migrationBuilder.DropTable(
-                name: "t_producto");
-        }
-
-        /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.CreateTable(
-                name: "t_producto",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    ImageURL = table.Column<string>(type: "text", nullable: false),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    Price = table.Column<decimal>(type: "numeric", nullable: false),
-                    Status = table.Column<string>(type: "text", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_t_producto", x => x.Id);
-                });
-
             migrationBuilder.CreateTable(
                 name: "t_proforma",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    UserID = table.Column<string>(type: "text", nullable: true),
                     ProductoId = table.Column<int>(type: "integer", nullable: true),
                     Cantidad = table.Column<int>(type: "integer", nullable: false),
                     Precio = table.Column<decimal>(type: "numeric", nullable: false),
-                    Status = table.Column<string>(type: "text", nullable: false),
-                    UserID = table.Column<string>(type: "text", nullable: true)
+                    Status = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -63,6 +37,13 @@ namespace NebulaCars.Data.Migrations
                 name: "IX_t_proforma_ProductoId",
                 table: "t_proforma",
                 column: "ProductoId");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "t_proforma");
         }
     }
 }
