@@ -48,7 +48,8 @@ nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: flex  ;
+ 
 }
 
 nav ul li {
@@ -128,16 +129,7 @@ nav ul li a:hover {
   background-color: #f0f0f0;
 }
 
-/* Estilos para el pie de página */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
+
 
 /* Estilos para el texto del pie de página */
 footer p {
@@ -268,3 +260,8 @@ footer p {
   margin-bottom: 5px;
 }
 
+/* index */
+.tabla_auto{
+  border: 1px solid #fff;
+  border-radius: 15px;
+}
