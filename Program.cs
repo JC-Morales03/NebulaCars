@@ -68,3 +68,12 @@ app.UseEndpoints(endpoints =>
     );
 }
 );
+
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "agendar",
+        pattern: "Agendar",
+        defaults: new { controller = "PostVentas", action = "Agendar" });
+});

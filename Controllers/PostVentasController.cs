@@ -23,12 +23,19 @@ namespace NebulaCars.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-        
+         public IActionResult Index()
+    {
+        return View();
+    }
 
+   
+
+         public IActionResult Garantia()
+        {
+        return View("Garantia");
+        }
+
+         
         [HttpPost]
         public IActionResult EnviarMensaje(AgendarCitas objcita)
         {
@@ -39,17 +46,24 @@ namespace NebulaCars.Controllers
             _context.SaveChanges();
 
             ViewData["Message"] = "Se registro el contacto";
-            return View("PostVentas");
+            return View("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View("Error!");
+             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
          public IActionResult PostVentas()
         {
         return View("index");
-        }        
+        }   
+     
+    
+     public IActionResult Agendar()
+    {
+        return View("Agendar");
+    }
     }
 }
