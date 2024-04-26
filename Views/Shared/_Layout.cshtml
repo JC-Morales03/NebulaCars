@@ -55,20 +55,45 @@
         </nav>
     </header>
 
-    <div class="container">
+    <!--NO PONER CONTEINER MALOGRA LAS DEMAS VISTAS -->
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
+    
 
-    <footer>
-    <div class="redes-sociales">
-      <a href="#"><img src="/images/whatsap.png" alt="Facebook"></a>
-      <a href="#"><img src="/images/Instagram-Icon.png" alt="Twitter"></a>
-      <a href="#"><img src="/images/facebookk.jpg" alt="Instagram"></a>
-    </div>
-    <p>&copy; 2024 Nebula Cars. Todos los derechos reservados.</p>
-  </footer>
+  @* FOOTER *@
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 text-center text-middle ml-5">
+                    <div class="mt-5 mb-3 flex-grow-1">
+                        <p class="text-dark h6" style="font-size: 16px;">Nebula Motors ©
+                            @DateTime.Now.Year.ToString().PadLeft(4, '0'). Todos los derechos reservados.� Potenciando
+                            el futuro con tecnología de vanguardia y pasión por la innovación.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="mb-3"> <img src="~/images/logoNebula.jpg" alt="Descripción de la imagen"
+                            class="img-fluid mx-auto d-block"> </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-2 mb-3"> <img src="~/images/facebook.jpg" alt="Descripción de la imagen"
+                                class="img-fluid"> </div>
+                        <div class="col-md-2 mb-3"> <img src="~/images/instagran.jpg" alt="Descripción de la imagen"
+                                class="img-fluid"> </div>
+                        <div class="col-md-2 mb-3"> <img src="~/images/whatsapp.jpg" alt="Descripción de la imagen"
+                                class="img-fluid"> </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mr-4">
+                    <div class="mt-4 mb-3">
+                        <h5 class="text-dark mb-2">Contáctanos</h5>
+                        <p class="text-dark">Email: nebula@gmail.com<br />Teléfono: 5435323</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
