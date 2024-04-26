@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,16 +9,18 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/NebulaCars.styles.css" asp-append-version="true" />
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar">
             <div class="container-fluid">
                 <!-- Reemplaza el texto con la etiqueta img -->
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="display: flex; align-items: center;">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"
+                    style="display: flex; align-items: center;">
                     <img src="/images/nebulalogo.jpg" alt="NebulaCars Logo" style="max-width: 100px;">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
@@ -26,16 +29,20 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Contacto" asp-action="Index">Contactanos</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Contacto"
+                                asp-action="Index">Contactanos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Productos</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home"
+                                asp-action="Privacy">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Catalogo" asp-action="Index">Catalogo</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Catalogo"
+                                asp-action="Index">Catalogo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Carrito" asp-action="Index">Carrito</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Carrito"
+                                asp-action="Index">Carrito</a>
                         </li>
                         <li class="nav-item">
                             <form asp-controller="Catalogo" asp-action="Index">
@@ -49,26 +56,49 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer>
-    <div class="redes-sociales">
-      <a href="#"><img src="/images/whatsap.png" alt="Facebook"></a>
-      <a href="#"><img src="/images/Instagram-Icon.png" alt="Twitter"></a>
-      <a href="#"><img src="/images/facebookk.jpg" alt="Instagram"></a>
-    </div>
-    <p>&copy; 2024 Nebula Cars. Todos los derechos reservados.</p>
-  </footer>
+    @* FOOTER *@
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 text-center text-middle ml-5">
+                    <div class="mt-5 mb-3 flex-grow-1">
+                        <p class="text-dark h6" style="font-size: 16px;">Nebula Motors ©
+                            @DateTime.Now.Year.ToString().PadLeft(4, '0'). Todos los derechos reservados.� Potenciando
+                            el futuro con tecnología de vanguardia y pasión por la innovación.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="mb-3"> <img src="~/images/logoNebula.jpg" alt="Descripción de la imagen"
+                            class="img-fluid mx-auto d-block"> </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-2 mb-3"> <img src="~/images/facebook.jpg" alt="Descripción de la imagen"
+                                class="img-fluid"> </div>
+                        <div class="col-md-2 mb-3"> <img src="~/images/instagran.jpg" alt="Descripción de la imagen"
+                                class="img-fluid"> </div>
+                        <div class="col-md-2 mb-3"> <img src="~/images/whatsapp.jpg" alt="Descripción de la imagen"
+                                class="img-fluid"> </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mr-4">
+                    <div class="mt-4 mb-3">
+                        <h5 class="text-dark mb-2">Contáctanos</h5>
+                        <p class="text-dark">Email: nebula@gmail.com<br />Teléfono: 5435323</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
-
-
-

@@ -49,11 +49,10 @@ button.accept-policy {
 }
 
 footer {
-  background-color: #333;
-  color: #fff;
+  
+  color: #000000;
   text-align: center;
   padding: 20px 0;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
