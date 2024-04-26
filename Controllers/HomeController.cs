@@ -33,4 +33,4 @@ public class HomeController : Controller
 {
     return View("DetallesQ8");
 }
-}
+}                                                                                                       
