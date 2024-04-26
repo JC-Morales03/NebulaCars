@@ -12,6 +12,6 @@ public class ApplicationDbContext : IdentityDbContext
     public DbSet<NebulaCars.Models.Contacto> DataContacto {get; set; }
     public DbSet<NebulaCars.Models.Producto> DataProducto {get; set; }
     public DbSet<NebulaCars.Models.Proforma> DataItemCarrito {get; set; }
-
+    public DbSet<NebulaCars.Models.Proforma> DataCita {get; set; }
 
 }

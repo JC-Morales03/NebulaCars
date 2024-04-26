@@ -68,3 +68,13 @@ app.UseEndpoints(endpoints =>
     );
 }
 );
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "PostVentas",
+        pattern: "index", // La ruta que deseas
+        defaults: new { controller = "PostVentas", action = "PostVentas" } // Controlador y acción que manejarán la solicitud
+    );
+}
+);
