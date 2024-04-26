@@ -1,14 +1,15 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Regístrate!";
+    ViewData["Title"] = "Regístrate aquí!";
 }
 
 <style>
     body {
-        background-image: url('/images/fondo4.jpg');
+        background-image: url('/images/sport1.jpg');
         background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
         background-repeat: no-repeat; /* Evita que la imagen se repita */
+        
     }
     .card {
         border-radius: 30px;
@@ -29,18 +30,17 @@
 
     /* Estilos para el botón de registrarse */
     #registerSubmit {
-        background-color: #007bff; /* Color azul */
+        background-color: #142239; /* Color azul */
         border-color: #007bff; /* Color del borde */
         width: 50%;
         margin-left: -5px; /* Agregamos un margen izquierdo para mover el botón a la izquierda */
     }
-    footer{
-        background-color: #fffdfc
-    }    
+     
     
 </style>
 
 <h1 class="text-center">@ViewData["Title"]</h1>
+<p></p>
 
 <div class="container form-container"> <!-- Agregamos una clase al contenedor para aplicar los estilos de centrado -->
     <div class="row justify-content-center">
@@ -74,6 +74,7 @@
         </div>
     </div>
 </div>
+
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
