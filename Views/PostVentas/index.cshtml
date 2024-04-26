@@ -11,8 +11,25 @@
     <title>Contacto</title>
     <style>
     /* Estilos CSS para mejorar la apariencia del formulario */
-     .container2 {
-            max-width: 800px;
+    .header-section {
+  background: url('/images/taller-mecanico-PostVentas.jpg') no-repeat center center / cover;
+  text-align: center;
+  color: white;
+  padding: 100px 0; /* Adjust padding as needed */
+}
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+            }
+
+
+        .postventas-container {
+            display: flex;
+            justify-content: center;
+            }
+        .container2 {
+            max-width: 100%;
             margin: 20px auto;
             display: flex;
             justify-content: space-between;
@@ -21,19 +38,29 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+            
+
         }
         .image-container {
             flex: 1;
-            padding-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
         }
         .image-container img {
-            max-width: 100%;
-            height: 100%;
+            max-width: 100%;           
             border-radius: 8px;
+            height: auto;   
         }
         .appointment-container {
             flex: 1;
-            padding-left: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
         }
         .appointment-container h2 {
             color: #333;
@@ -54,14 +81,14 @@
         .button:hover {
             background-color: #0056b3;
         }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    body, html  {
+      
       background-color: #f4f4f4;
+      width: 100%;
+    overflow-x: hidden;
     }
     .container {
-      max-width: 600px;
+      max-width: 100%;
       margin: 20px auto;
       padding: 20px;
       background-color: #fff;
@@ -93,113 +120,35 @@
   </style> 
 
 </head>
+<section class="header-section">
+  <h1>Servicio de Calidad</h1>
+</section>
+
 <body>
-    
-    <h2>Contacto</h2>
+    <h2>PostVentas</h2>
+        
     <div class="container2">
         <div class="image-container">
-            <img src="~/img/portada.jpg"/>
+            <img src="~/images/portada.jpg"/>
         </div>
         <div class="appointment-container">
             <h2>¿Agenda tu Cita de mantenimiento Aqui </h2>
-            <p>En NEBULA CARS puedes agendar tu cita de mantenimiento de modo onnline rapido, y seguro</p>
-            <button class="button" value="ViewAgendar">Agendar Cita</button>
+            <p>En NEBULA CARS puedes agendar tu cita de mantenimiento de modo onnline rapido, y seguro</p>            
+            <button asp-controller="PostVentasController" asp-action="Agendar" class="button" value="ViewGarantia">Agendar Aqui</button>          
         </div>
-    </div>
+    </div>  
     <div class="container2">
       <div class="appointment-container">
             <h2>  Garantia </h2>
             <p>En NEBULA CARS, nuestra garantía, es más que una promesa, es nuestro compromiso o recorrido. Con nosotros, tu satisfacción está asegurada en cada giro del camino.</p>
-            <button class="button" value="ViewGarantia">Consultar Aqui</button>
+            <button asp-controller="PostVentasController" asp-action="Agendar" class="button" value="ViewGarantia">Consultar Aqui</button>
         </div>
         <div class="image-container">
-            <img src="~/img/portada.jpg"/>
+            <img src="~/images/taller-electrico-automotriz.jpg"/>
         </div>
-    </div>
+    </div>   
 
-
-    @using (Html.BeginForm("EnviarMensaje", "AgendarCitas", FormMethod.Post, new { @class = "form-group" }))
-{
-      <div class="form-group">
-        @Html.LabelFor(model => model.Nombre)
-        @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", required = "required" })
-        @Html.ValidationMessageFor(model => model.Nombre)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Email)
-        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", required = "required", type = "email" })
-        @Html.ValidationMessageFor(model => model.Email)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Telefono)
-        @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control", required = "required" })
-        @Html.ValidationMessageFor(model => model.Telefono)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Ciudad)
-        @Html.TextBoxFor(model => model.Ciudad, new { @class = "form-control", required = "required" })
-        @Html.ValidationMessageFor(model => model.Ciudad)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.TipoDocumento)
-        @Html.DropDownListFor(model => model.TipoDocumento, new SelectList(new[] { "DNI", "Carnet de Extranjería" }), new { @class = "form-control", required = "required" })
-        @Html.ValidationMessageFor(model => model.TipoDocumento)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.NumeroDocumento)
-        @Html.TextBoxFor(model => model.NumeroDocumento, new { @class = "form-control", required = "required" })
-        @Html.ValidationMessageFor(model => model.NumeroDocumento)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Marca)
-        @Html.DropDownListFor(model => model.Marca, new SelectList(new[] { "Toyota", "Honda", "Ford" }), new { @class = "form-control", required = "required" })
-        @Html.ValidationMessageFor(model => model.Marca)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Modelo)
-        @Html.TextBoxFor(model => model.Modelo, new { @class = "form-control", required = "required" })
-        @Html.ValidationMessageFor(model => model.Modelo)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Kilometraje)
-        @Html.TextBoxFor(model => model.Kilometraje, new { @class = "form-control", required = "required" })
-        @Html.ValidationMessageFor(model => model.Kilometraje)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Placa)
-        @Html.TextBoxFor(model => model.Placa, new { @class = "form-control", required = "required" })
-        @Html.ValidationMessageFor(model => model.Placa)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.FechaCita)
-        @Html.TextBoxFor(model => model.FechaCita, new { @class = "form-control", required = "required", type = "date" })
-        @Html.ValidationMessageFor(model => model.FechaCita)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.HoraCita)
-        @Html.TextBoxFor(model => model.HoraCita, new { @class = "form-control", required = "required", type = "time" })
-        @Html.ValidationMessageFor(model => model.HoraCita)
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Mensaje)
-        @Html.TextAreaFor(model => model.Mensaje, new { @class = "form-control" })
-        @Html.ValidationMessageFor(model => model.Mensaje)
-    </div>
-
-    <button type="submit" class="btn btn-primary">Agendar Cita</button>
-}
+    
 </body>
 </html>
 
