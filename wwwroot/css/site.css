@@ -23,11 +23,12 @@ body {
 
 
 header {
-  background-color: #fdfafa;
+  background-color: #142239;
   color: #fff;
   padding: 10px 20px;
   display: flex;
   align-items: center;
+  padding-left: 270px;
   justify-content: space-between;
 }
 
@@ -35,6 +36,7 @@ header {
 header img {
   height: 90px; /* altura del logo */
   width: auto;
+  padding-left: -10px;
   transition: transform 0.3s ease; /* Transición suave al pasar el mouse */
 }
 
