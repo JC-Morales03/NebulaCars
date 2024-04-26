@@ -131,25 +131,9 @@ nav ul li a:hover {
 
 
 
-/* Estilos para el texto del pie de página */
-footer p {
-  margin: 0;
-}
 
-/* Estilos para los íconos de redes sociales */
-.redes-sociales {
-  margin-bottom: 10px;
-}
 
-.redes-sociales a {
-  display: inline-block;
-  margin-right: 10px;
-}
 
-.redes-sociales a img {
-  width: 30px; /* Ajusta el tamaño de los íconos según sea necesario */
-  height: auto;
-}
 
 
 @keyframes move {
