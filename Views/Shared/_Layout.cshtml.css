@@ -23,9 +23,9 @@ body {
 
 
 header {
-  background-color: #333;
+  background-color: #56B3E1; /* Cambiar el color de fondo a azul */
   color: #fff;
-  padding: 10px 20px;
+  padding: 5px 400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
