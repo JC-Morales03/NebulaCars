@@ -3,46 +3,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto</title>
     
-</head>
-<body>
-    <div class="container">
-    <div style="text-align: center; color:#142239">
-        
-        <p></p>
-  <h2>Contactate con nosotros!</h2>
-</div>
-    <p></p>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/contactanos.css" asp-append-version="true" />
     
+</head>
+
+<body>
+    <div class="contactUs">
+        <div class="title">
+            <h2 class="titulo-formulario">CONTÁCTANOS</h2>
+        </div>
+        <div class="box">
+            <div class="contact form">
+                <h3>Contáctate con nosotros, te responderemos lo mas pronto!</h3>
+                <form asp-controller="Contacto" asp-action="EnviarMensaje" method="post" class="contact-form">
+                    <div class="formBox">
+                        <div class="row100">
+                            <div class="inputBox">
+                                <label asp-for="Name">Nombre:</label>
+                                <input asp-for="Name" class="form-control" placeholder="Nombre" />
+                                <span asp-validation-for="Name" class="validation-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="row50">
+                            <div class="inputBox">
+                                <label asp-for="Email">Email:</label>
+                                <input asp-for="Email" class="form-control" placeholder="Correo electrónico" />
+                                <span asp-validation-for="Email" class="validation-message"></span>
+                            </div>
+                            <div class="inputBox">
+                                <label asp-for="Phone">Teléfono:</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        
+                                    </div>
+                                    <input asp-for="Phone" class="form-control" placeholder="Número de teléfono" />
+                                </div>
+                                <span asp-validation-for="Phone" class="validation-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="row100">
+                            <div class="inputBox">
+                                <label asp-for="Message">Mensaje:</label>
+                                <textarea asp-for="Message" class="form-control" placeholder="Mensaje"></textarea>
+                                <span asp-validation-for="Message" class="validation-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="row100">
+                            <div class="inputBox">
+                                <button type="submit">Enviar</button>
+                            </div>
+                        </div>
+
+                        <div class="row100">
+                            <div class="inputBox">
+                                <h1>@ViewData["Message"]</h1>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="contact info">
+                <h3>CANALES DE ATENCIÓN:</h3>
+                <div class="infoBox">
+                    <div>
+                        <span><i class="fa-solid fa-location-dot" style="color: #ffffff;"></i></span>
+                        <a href="#">Av. Petit Thouars 555, Miraflores</a>
+                    </div>
+                    <div>
+                        <span><i class="fa-solid fa-phone" style="color: #ffffff;"></i></span>
+                        <a href="#">(01) 357365</a>
+                    </div>
+                    <div>
+                        <span><i class="fa-solid fa-envelope" style="color: #ffffff;"></i></span>
+                        <a href="#">nebula@cars.com</a>
+                    </div>
+                    
+                 <ul class="sci">
+                        <li ><a href="#"><i class="fa-brands fa-facebook" style="color: #ffffff;"></i></a></li>
+                        <li ><a href="#"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i></a></li>
+                        <li ><a href="#"><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></a></li>
+                        <li ><a href="#"><i class="fab fa-whatsapp" style="color: #ffffff;"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+           <div class="contact map">
+            </div>
     </div>
-    @using (Html.BeginForm("EnviarMensaje", "Contacto", FormMethod.Post, new { @class = "contact-form" }))
-    {
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name)
-            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Nombre" })
-            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "validation-message" })
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email)
-            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Correo electrónico" })
-            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "validation-message" })
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Message)
-            @Html.TextAreaFor(model => model.Message, new { @class = "form-control", placeholder = "Mensaje" })
-            @Html.ValidationMessageFor(model => model.Message, "", new { @class = "validation-message" })
-        </div>
-
-        <button type="submit">Enviar</button>
-    }
-
-    <h1>@ViewData["Message"]</h1>
 </body>
 </html>
+
 
 
