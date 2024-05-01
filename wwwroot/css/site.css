@@ -175,49 +175,7 @@ nav ul li a:hover {
 
 /*CSS PARA CONTACTO */
 
-/* Estilos para el formulario de contacto */
-.contact-form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
 
-.contact-form .form-group {
-  margin-bottom: 20px;
-}
-
-.contact-form label {
-  display: block;
-  font-weight: bold;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-.contact-form button[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.validation-message {
-  color: red;
-  font-size: 12px;
-}
 
 
 /* Q8 CARACTERISTICAS*/
