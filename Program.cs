@@ -5,6 +5,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.OpenApi.Models;
 using NebulaCars.Service;
 using NebulaCars.Integration.jsonplaceholder;
+using NebulaCars.Integration.currencyexchange;
 
 
 
@@ -30,6 +31,9 @@ builder.Services.AddControllersWithViews();
 //Registro mi logica customizada y reuzable
 builder.Services.AddScoped<ProductoService, ProductoService>();
 builder.Services.AddScoped<JsonplaceholderApiIntegration, JsonplaceholderApiIntegration>();
+
+builder.Services.AddScoped<CurrencyExchangeApiIntegration, CurrencyExchangeApiIntegration>();
+builder.Services.AddScoped<PedidoService, PedidoService>();
 
 
 builder.Services.AddSession(options =>
