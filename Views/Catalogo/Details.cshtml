@@ -3,22 +3,56 @@
 @{
     ViewData["Title"] = "Detalles del Producto";
 }
-    
-    <h1>Detalles</h1>
-    <div class="container">
-            <div class="col-sm-4">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="card-img-actions">
-                    <img class="img-responsive" width="96" height="150"
-                       src="@Html.DisplayFor(model => model.ImageURL)"  />
-                  </div>
+<style>
+    body {
+        background-color: #f8f9fa; /* Fondo gris claro */
+    }
+    h1 {
+        color: #343a40; /* Color del título */
+    }
+    .card {
+        border: none; /* Sin bordes */
+        border-radius: 10px; /* Bordes redondeados */
+        overflow: hidden; /* Para que la imagen de la tarjeta se recorte */
+    }
+    .card-img-top {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .card-body {
+        background-color: #ffffff; /* Fondo blanco */
+    }
+    .card-title {
+        color: black; /* Color del título de la tarjeta */
+    }
+    .card-text {
+        font-size: 1.25rem; /* Tamaño del texto del precio */
+        color: #6c757d; /* Color del texto del precio */
+    }
+    .btn-primary {
+        background-color: #142239; /* Color del botón */
+        border-color: #142239; /* Color del borde del botón */
+    }
+    .btn-primary:hover {
+        background-color: #0f1a2c; /* Color del botón al pasar el ratón */
+        border-color: #0f1a2c; /* Color del borde del botón al pasar el ratón */
+    }
+</style>
+
+
+<h1 class="text-center mb-4">Detalles del Producto</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mb-3 shadow-sm">
+                <img class="card-img-top" src="@Model.ImageURL" alt="Imagen del Producto" style="height: 300px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@Model.Name</h5>
+                    <p class="card-text text-muted">@Model.Price.ToString("C")</p>
+                    <a class="btn btn-primary" asp-action="Add" asp-route-id="@Model.Id">Agregar al Carrito</a>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">@Html.DisplayFor(model => model.Name)</h5>
-                  <h5 class="card-title">@Html.DisplayFor(model => model.Price)</h5>
-                  <a class="btn btn-primary" asp-action="Add" asp-route-id="@Model.Id">Add</a>
-                </div>
-              </div>
             </div>
+        </div>
     </div>
+</div>
