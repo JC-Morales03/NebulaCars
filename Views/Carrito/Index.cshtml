@@ -7,44 +7,92 @@
     listItemsCarrito = @Model.elementosCarrito;
     Decimal montoTotal = @Model.montoTotal;
 }
+<style>
+    body {
+        background-color: #f8f9fa; /* Fondo gris claro */
+    }
+    h1 {
+        color: #343a40; /* Color del título */
+    }
+    .table {
+        border-radius: 10px; /* Bordes redondeados para la tabla */
+        overflow: hidden; /* Para que los bordes redondeados funcionen */
+    }
+    .table th, .table td {
+        vertical-align: middle; /* Alineación vertical en el centro */
+    }
+    .btn-success {
+        background-color: #28a745; /* Color verde para el botón de pagar */
+        border-color: #28a745;
+    }
+    .btn-success:hover {
+        background-color: #218838; /* Color verde más oscuro al pasar el ratón */
+        border-color: #1e7e34;
+    }
+    .btn-info {
+        background-color: #142239; /* Color azul para el botón de editar */
+        border-color: #142239;
+    }
+    .btn-info:hover {
+        background-color: #138496; /* Color azul más oscuro al pasar el ratón */
+        border-color: #117a8b;
+    }
+    .btn-danger {
+        background-color: #dc3545; /* Color rojo para el botón de eliminar */
+        border-color: #dc3545;
+    }
+    .btn-danger:hover {
+        background-color: #c82333; /* Color rojo más oscuro al pasar el ratón */
+        border-color: #bd2130;
+    }
+</style>
 
-<h1>@ViewData["Title"]</h1>
 
-<a class="btn btn-primary" asp-controller="Pago" 
-        asp-action="Create" asp-route-monto="@montoTotal">Pagar</a><p>Total S/. @montoTotal</p>
+<h1 class="text-center mb-4">@ViewData["Title"]</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Producto.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Cantidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Precio)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (Proforma item in Model.elementosCarrito) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Producto.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cantidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container">
+    <div class="row mb-4">
+        <div class="col text-right">
+            <a class="btn btn-success" asp-controller="Pago" asp-action="Create" asp-route-monto="@montoTotal">Pagar</a>
+        </div>
+        <div class="col text-right">
+            <h4>Total: S/. @montoTotal</h4>
+        </div>
+    </div>
+
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Producto.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Precio)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Proforma item in Model.elementosCarrito) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Producto.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        <a class="btn btn-sm btn-info" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
