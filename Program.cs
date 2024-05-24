@@ -4,6 +4,7 @@ using NebulaCars.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Microsoft.OpenApi.Models;
 using NebulaCars.Service;
+using NebulaCars.Integration.jsonplaceholder;
 
 
 
@@ -28,6 +29,7 @@ builder.Services.AddControllersWithViews();
 
 //Registro mi logica customizada y reuzable
 builder.Services.AddScoped<ProductoService, ProductoService>();
+builder.Services.AddScoped<JsonplaceholderApiIntegration, JsonplaceholderApiIntegration>();
 
 
 builder.Services.AddSession(options =>
