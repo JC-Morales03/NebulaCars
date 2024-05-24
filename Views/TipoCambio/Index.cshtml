@@ -3,33 +3,73 @@
 @{
     ViewData["Title"] = "TipoCambio";
 }
-
 <div class="container">
-    <h1 class="text-center mb-4">Formulario de Tipo Cambio</h1>
+    <p>&nbsp;</p>
+    <h1 class="text-center mb-4" style="font-weight: bold; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 50px;">CONVERSIÓN TIPO DE CAMBIO</h1>
+    <p>&nbsp;</p>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <form asp-controller="TipoCambio" asp-action="Exchange" method="post">
-                <div class="form-group">
+                <div class="form-group" style="font-size: 40px; font-family: Verdana, Geneva, Tahoma, sans-serif ">
                     <label asp-for="From" class="control-label"></label>
-                    <input asp-for="From" class="form-control" />
+                    <select asp-for="From" class="form-control" style="font-size: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif">
+                        <option value="USD">Dólar Estadounidense (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="JPY">Yen Japonés (JPY)</option>
+                        <option value="GBP">Libra Esterlina Británica (GBP)</option>
+                        <option value="CHF">Franco Suizo (CHF)</option>
+                        <option value="AUD">Dólar Australiano (AUD)</option>
+                        <option value="CAD">Dólar Canadiense (CAD)</option>
+                        <option value="CNY">Yuan Chino (CNY)</option>
+                        <option value="NZD">Dólar Neozelandés (NZD)</option>
+                        <option value="KRW">Won Surcoreano (KRW)</option>
+                        <option value="BRL">Real Brasileño (BRL)</option>
+                        <option value="INR">Rupia India (INR)</option>
+                        <option value="RUB">Rublo Ruso (RUB)</option>
+                        <option value="MXN">Peso Mexicano (MXN)</option>
+                        <option value="PEN">Nuevo Sol Peruano (PEN)</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
                 </div>
-                <div class="form-group">
+                <p>&nbsp;</p>
+                <div class="form-group" style="font-size: 40px; font-family: Verdana, Geneva, Tahoma, sans-serif ">
                     <label asp-for="To" class="control-label"></label>
-                    <input asp-for="To" class="form-control" />
+                    <select asp-for="To" class="form-control" style="font-size: 20px; font-family:Verdana, Geneva, Tahoma, sans-serif">
+                        <option value="USD">Dólar Estadounidense (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                        <option value="JPY">Yen Japonés (JPY)</option>
+                        <option value="GBP">Libra Esterlina Británica (GBP)</option>
+                        <option value="CHF">Franco Suizo (CHF)</option>
+                        <option value="AUD">Dólar Australiano (AUD)</option>
+                        <option value="CAD">Dólar Canadiense (CAD)</option>
+                        <option value="CNY">Yuan Chino (CNY)</option>
+                        <option value="NZD">Dólar Neozelandés (NZD)</option>
+                        <option value="KRW">Won Surcoreano (KRW)</option>
+                        <option value="BRL">Real Brasileño (BRL)</option>
+                        <option value="INR">Rupia India (INR)</option>
+                        <option value="RUB">Rublo Ruso (RUB)</option>
+                        <option value="MXN">Peso Mexicano (MXN)</option>
+                        <option value="PEN">Nuevo Sol Peruano (PEN)</option>
+                        
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
                 </div>
-                <div class="form-group">
+                <p>&nbsp;</p>
+                <div class="form-group" style="font-size: 40px; font-family: Verdana, Geneva, Tahoma, sans-serif ">
                     <label asp-for="Cantidad" class="control-label"></label>
                     <input asp-for="Cantidad" class="form-control" />
                 </div>
-                <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary">Exchange</button>
+                <p>&nbsp;</p>
+                <div class="form-group text-center" style="size: 100px;">
+                    <button type="submit" class="btn btn-primary" style="font-size: 20px; font-weight: bold;">REALIZAR CONVERSIÓN</button>
                 </div>
             </form>
-             <h1>Tipo Cambio: @ViewData["rate"]</h1>
-             <h1>Cambio Total: @ViewData["cambio"]</h1>
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
+            <p>&nbsp;</p>
+            <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 28px; font-weight: bold;">VALOR DEL TIPO DE CAMBIO APLICADO: @ViewData["rate"]</h1>
+            <h1 style="font-family: 'Times New Roman', Times, serif; font-size: 28px; font-weight: bold;">MONTO TOTAL CAMBIADO:  @ViewData["cambio"]</h1>
+            <div>
+                <a asp-action="Index">REGRESAR</a>
+            </div>
         </div>
     </div>
 </div>
