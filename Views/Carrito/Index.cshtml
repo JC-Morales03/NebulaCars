@@ -8,29 +8,29 @@
     Decimal montoTotal = @Model.montoTotal;
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 style="text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; padding-top: 3%;">CARRITO DE COMPRAS</h1>
 
-<a class="btn btn-primary" asp-controller="Pago" 
-        asp-action="Create" asp-route-monto="@montoTotal">Pagar</a><p>Total S/. @montoTotal</p>
+<div style="text-align: center; padding-top: 1%; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"><a class="btn btn-primary" asp-controller="Pago" 
+        asp-action="Create" asp-route-monto="@montoTotal" style="text-align: center; font-size: 150%;">Realizar Pago</a><p>&nbsp;</p><p>&nbsp;&nbsp;&nbsp; Monto total a pagar: S/. @montoTotal</p></div>
 
-<table class="table">
+<table class="table" style="text-align: center;">
     <thead>
-        <tr>
+        <tr style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; font-size: 200%;">
             <th>
-                @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Producto.Name)
+                NOMBRE DEL PRODUCTO
             </th>
             <th>
-                @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Cantidad)
+                CANTIDAD
             </th>
             <th>
-                @Html.DisplayNameFor(model => listItemsCarrito.FirstOrDefault().Precio)
+                PRECIO
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (Proforma item in Model.elementosCarrito) {
-        <tr>
+        <tr style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight: bold; font-size: 130%;">
             <td>
                 @Html.DisplayFor(modelItem => item.Producto.Name)
             </td>
@@ -40,9 +40,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Precio)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            <td style="padding-left: 5%; padding-right: 5%;">
+                <a asp-action="Edit" asp-route-id="@item.Id" style="padding-left: 5%; padding-right: 5%;">EDITAR SELECCIÓN</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" style="padding-left: 5%; padding-right: 5%;">ELIMINAR SELECCIÓN</a>
             </td>
         </tr>
 }
