@@ -1,0 +1,44 @@
+@model IEnumerable<NebulaCars.Models.Pedido>
+@{
+    ViewData["Title"] = "Pedido";  
+}
+
+<h1>Pedidos</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+    
+
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Pedido" asp-action="DetallesPedido" asp-route-pedidoId="@item.ID" title="Ver detalles"><i class="fa-solid fa-book" style="color: #581908;"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

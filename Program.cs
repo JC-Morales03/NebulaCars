@@ -33,6 +33,7 @@ builder.Services.AddScoped<ProductoService, ProductoService>();
 builder.Services.AddScoped<JsonplaceholderApiIntegration, JsonplaceholderApiIntegration>();
 
 builder.Services.AddScoped<CurrencyExchangeApiIntegration, CurrencyExchangeApiIntegration>();
+builder.Services.AddScoped<PedidoService, PedidoService>();
 
 
 builder.Services.AddSession(options =>
