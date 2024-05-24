@@ -2,13 +2,25 @@
 @{
     ViewData["Title"] = "Catálogo";
 }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
+
+<div id="regresar">
+    <a href="../">
+        <i class="bi bi-arrow-return-left"></i>
+    </a>
+</div>
 
 <div class="container">
     <h1>@ViewData["Title"]</h1>
 </div>
 
 <div class="container">
-    <h1>@ViewData["Message"]</h1>
+    @if(ViewData["Message"]!=null){
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>Mensaje:</strong> @ViewData["Message"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    }
     <div class="row">
         <!-- Formulario de búsqueda -->
         <div class="col">
@@ -24,22 +36,24 @@
         <div class="col">
             <div id="products" class="mb-3">
                 <div class="row">
-                    @foreach (var item in Model) {
-                    <div class="col-sm-4">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="card-img-actions">
-                                    <img src="@item.ImageURL" class="d-block w-100 image-fit">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-sm-4">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="card-img-actions">
+                                        <img src="@item.ImageURL" class="d-block w-100 image-fit">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                                    <p class="card-text">@Html.DisplayFor(modelItem => item.Price)</p>
+                                    <a class="btn btn-primary" asp-action="Add" asp-route-id="@item.Id">Agregar a
+                                        carrito</a>
+                                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Ver carrito</a>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
-                                <p class="card-text">@Html.DisplayFor(modelItem => item.Price)</p>
-                                <a class="btn btn-primary" asp-action="Add" asp-route-id="@item.Id">Agregar a carrito</a>
-                                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Ver carrito</a>
-                            </div>
                         </div>
-                    </div>
                     }
                 </div>
             </div>
