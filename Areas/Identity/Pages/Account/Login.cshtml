@@ -4,39 +4,58 @@
 @{
     ViewData["Title"] = "Log in";
 }
- <style>
+<style>
     body {
-        background-color: #ffffff; /* Color de fondo gris claro */
+        
+        background-image: url('/images/sport1.jpg');
+        background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
     }
     .custom-form {
         margin-top: 50px; /* Espacio superior */
-        background-color: #a2a7b1; /* Color de fondo blanco */
+        background-color: transparent; /* Fondo transparente */
         border-radius: 10px; /* Bordes redondeados */
         padding: 30px; /* Espaciado interior */
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+        max-width: 400px; /* Ancho máximo del formulario */
+        margin-left: auto;
+        margin-right: auto;
     }
     .custom-form h1 {
         color: #142239; /* Color de título azul */
     }
-    
     .custom-form label {
         color: #142239; /* Color de etiquetas */
     }
     #login-submit {
-        background-color: #990606; /* Color de botón azul */
-        border-color: #007bff;
-        width: 30%;
-        margin-left: 200px;
+        background-color: #142239; /* Color del botón */
+        border-color: #142239; /* Color del borde del botón */
+        color: white; /* Color del texto del botón */
+        width: 100%; /* Ancho del botón */
     }
     #login-submit:hover {
-        background-color: #142239; /* Color de botón azul más oscuro al pasar el ratón */
-        border-color: #142239;
+        background-color: #0f1a2c; /* Color del botón al pasar el ratón */
+        border-color: #0f1a2c; /* Color del borde del botón al pasar el ratón */
     }
-    h2{
+    h2 {
+        color: #142239; /* Color del subtítulo */
+    }
+    #forgot-password,
+    #resend-confirmation {
+        text-decoration: none;
         color: #142239;
     }
-
+    #forgot-password:hover,
+    #resend-confirmation:hover {
+        text-decoration: underline;
+    }
+    .text-center {
+        color: #142239; /* Color del texto centrado */
+    }
+    
 </style>
+
+
 
 <div class="container">
     <div class="row justify-content-center">
@@ -79,6 +98,7 @@
             </div>
         </div>
     </div>
+
 </div>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
