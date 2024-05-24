@@ -2,7 +2,7 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Inicio de Sesion";
 }
 <style>
     body {
@@ -22,14 +22,14 @@
         margin-right: auto;
     }
     .custom-form h1 {
-        color: #142239; /* Color de título azul */
+        color: white; /* Color de título azul */
     }
     .custom-form label {
-        color: #142239; /* Color de etiquetas */
+        color: white; /* Color de etiquetas */
     }
     #login-submit {
         background-color: #142239; /* Color del botón */
-        border-color: #142239; /* Color del borde del botón */
+        border-color: white; /* Color del borde del botón */
         color: white; /* Color del texto del botón */
         width: 100%; /* Ancho del botón */
     }
@@ -38,7 +38,7 @@
         border-color: #0f1a2c; /* Color del borde del botón al pasar el ratón */
     }
     h2 {
-        color: #142239; /* Color del subtítulo */
+        color: white; /* Color del subtítulo */
     }
     #forgot-password,
     #resend-confirmation {
@@ -63,7 +63,7 @@
             <div class="custom-form">
                 <h1 class="text-center">@ViewData["Title"]</h1>
                 <form id="account" method="post">
-                    <h2 class="text-center">Inicio de Sesión</h2>
+                    <h2 class="text-center">&nbsp;</h2>
                     <hr />
                     <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                     <div class="form-group">
