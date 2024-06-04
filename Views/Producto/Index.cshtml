@@ -4,50 +4,165 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 style="font-size: 80px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; padding-left: 20px;">LISTA Y DETALLES DE PRODUCTOS</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-<p>
-    <a asp-action="Create" style="font-size: 40px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; padding-left: 20px;">AÑADIR PRODUCTOS</a>
-</p>
-<table class="table" style="font-size: 20px;">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageURL)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageURL)
-            </td>
-            <td style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-                <a asp-action="Edit" asp-route-id="@item.Id">EDITAR SELECCIÓN</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">DETALLES</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">BORRAR</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 70px;
+            font-family: 'Impact', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            padding: 20px 0;
+            color: #333;
+        }
+
+        .btn-add {
+            display: block;
+            width: 250px;
+            margin: 20px auto;
+            padding: 15px;
+            font-size: 30px;
+            font-family: 'Impact', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            color: #fff;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn-add:hover {
+            background-color: #4cae4c;
+        }
+
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            font-size: 20px;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        td {
+            font-size: 18px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dcdcdc;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #001f3f;
+            color: white;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .actions {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .actions a {
+            margin: 0 5px;
+            color: white;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .actions a:hover {
+            transform: scale(1.2);
+        }
+
+        .fa-icon {
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LISTA Y DETALLES DE PRODUCTOS</h1>
+
+        <p>
+            <a href="@(Url.Action("Create"))" class="btn-add">AÑADIR PRODUCTOS</a>
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Price)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ImageURL)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        <img src="@item.ImageURL" alt="@item.Name" style="width:100px;height:auto;" />
+                    </td>
+                    <td class="actions">
+                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit fa-icon"></i></a>
+                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-info-circle fa-icon"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash-alt fa-icon"></i></a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
