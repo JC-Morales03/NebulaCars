@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NebulaCars.Models;
 using NebulaCars.Data;
+using NebulaCars.Service;
 
 
 namespace NebulaCars.Controllers
@@ -15,19 +16,24 @@ namespace NebulaCars.Controllers
     {
         private readonly ILogger<PostVentasController> _logger;
         private readonly ApplicationDbContext _context;
+        private readonly PostVentasService _postventasService;
 
-
-        public PostVentasController(ILogger<PostVentasController> logger,ApplicationDbContext context)
+        public PostVentasController(ILogger<PostVentasController> logger,ApplicationDbContext context,PostVentasService postVentasService)
         {
             _logger = logger;
             _context = context;
+            _postventasService=postVentasService;
         }
 
          public IActionResult Index()
     {
         return View();
     }
-
+         public async Task<IActionResult> Citas()
+        {
+            var AgendarCitas = await _postventasService.GetAllAgendarCitas();
+            return View(AgendarCitas);
+        }
    
 
          public IActionResult Garantia()

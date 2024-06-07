@@ -45,6 +45,8 @@ builder.Services.AddScoped<PedidoService, PedidoService>();
 
 builder.Services.AddScoped<ContactoService, ContactoService>();
 
+builder.Services.AddScoped<PostVentasService, PostVentasService>();
+
 
 builder.Services.AddSession(options =>
 {
