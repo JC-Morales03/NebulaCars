@@ -37,16 +37,17 @@ namespace NebulaCars.Controllers
 
          
         [HttpPost]
-        public IActionResult EnviarMensaje(AgendarCitas objcita)
+        public IActionResult EnviarCita(AgendarCitas objcita)
         {
             _logger.LogDebug("Ingreso a Enviar Mensaje");
-
+            // Convertir las fechas a UTC
+             objcita.ConvertToUtc();
             //Se registran los datos del objeto a la base datos
             _context.Add(objcita);
             _context.SaveChanges();
 
-            ViewData["Message"] = "Se registro el contacto";
-            return View("Index");
+            ViewData["Message"] = "Se registro su cita";
+            return View("Agendar");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

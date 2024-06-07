@@ -48,5 +48,16 @@ namespace NebulaCars.Models
         [DataType(DataType.Time)]
         public DateTime HoraCita { get; set; }
 
+         public void ConvertToUtc()
+        {
+            FechaCita = EnsureUtc(FechaCita);
+            HoraCita = EnsureUtc(HoraCita);
+        }
+
+        private DateTime EnsureUtc(DateTime dateTime)
+        {
+            return dateTime.Kind == DateTimeKind.Unspecified ? DateTime.SpecifyKind(dateTime, DateTimeKind.Utc) : dateTime.ToUniversalTime();
+        }
+
     }
 }
