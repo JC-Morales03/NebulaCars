@@ -62,8 +62,8 @@
             <div class="content">
                 <div class="form-section">
                     <div class="form-container">
-                    <form asp-controller="AgendarCitas" asp-action="EnviarCita" method="post" class="contact-form">                     
-                        @using (Html.BeginForm("EnviarCita", "AgendarCitas", FormMethod.Post, new { @class = "form-group" }))
+                    <form asp-controller="PostVentas" asp-action="EnviarCita" method="post" class="contact-form">                     
+                        @using (Html.BeginForm("EnviarCita", "PostVentas", FormMethod.Post, new { @class = "form-group" }))
                         {
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Nombre)
@@ -146,6 +146,7 @@
                             <button type="submit" class="btn btn-primary">Agendar Cita</button>
                         }
                         </form>  
+                         <h1>@ViewData["Message"]</h1>
                     </div>
                 </div>
                 <div class="image-section">
